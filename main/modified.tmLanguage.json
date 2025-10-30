@@ -2202,19 +2202,19 @@
             "begin": "((?:\\\\)(\\w+))\\b(\\{)",
             "beginCaptures": {
                 "1": {
-                    "name": "support.function.custom.$2"
+                    "name": "support.function.custom.$2.latex"
                 },
                 "3": {
-                    "name": "punctuation.definition.function.$2.latex"
+                    "name": "punctuation.definition.function.custom.$2.latex"
                 }
             },
             "end": "\\}",
             "endCaptures": {
                 "0": {
-                    "name": "punctuation.definition.function.$2.latex"
+                    "name": "punctuation.definition.function.custom.$2.latex"
                 }
             },
-            "name": "meta.function.custom.$2",
+            "name": "meta.function.custom.$2.latex",
             "patterns": [
                 {
                     "include": "$self"
@@ -2222,7 +2222,19 @@
             ]
         },
         {
+            "match": "\\{|\\}",
+            "name": "punctuation.definition.bracket.unknown.latex"
+        },
+        {
             "include": "text.tex"
+        },
+        {
+            "match": "(\\(|\\)|,|\\.|;|\"|'|\\-|\\?|\\!)",
+            "name": "punctuation.section.normal.latex"
+        },
+        {
+            "match": "\\b(\\-|\\+|0x|0b)?[0-9,_]+(\\.\\d+)?(e[+\\-]?\\d+)?\\b",
+            "name": "constant.numeric.latex"
         }
     ],
     "repository": {
